@@ -1,9 +1,6 @@
 from django.contrib import admin
-from .models import TimeBlock, Activity, Day
-
-# Register your models here.
+from .models import TimeBlock, Activity
 
 
 admin.site.register(TimeBlock)
 admin.site.register(Activity)
-admin.site.register(Day)
