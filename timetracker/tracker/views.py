@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
+from .models import TimeBlock
 
-# Create your views here.
+
+class TimeBlockCreate(CreateView):
+    model = TimeBlock
+    fields = ["activity"]
