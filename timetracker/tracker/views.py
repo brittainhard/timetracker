@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
-from .models import TimeBlock
+from .models import TimeBlock, Activity
 
 
-class TimeBlockCreate(CreateView):
+class TimeBlockCreateView(CreateView):
     model = TimeBlock
-    fields = ["activity", "minutes"]
+    fields = ["activity", "duration"]
+
+
+class ActivityCreateView(CreateView):
+    model = Activity
+    fields = ["name"]

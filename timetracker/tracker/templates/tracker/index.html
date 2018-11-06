@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Time Tracker</title>
+  </head>
+  <body>
+    <p>
+      <a href="{% url 'add_time_block' %}">Add Time Block</a>
+      <a href="{% url 'add_activity' %}">Add Activity</a>
+    </p>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
