@@ -5,4 +5,4 @@ from .models import TimeBlock
 
 class TimeBlockCreate(CreateView):
     model = TimeBlock
-    fields = ["activity"]
+    fields = ["activity", "minutes"]
