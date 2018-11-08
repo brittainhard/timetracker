@@ -18,6 +18,13 @@ class TimeBlock(models.Model):
     recorded_time = models.DateField(default=datetime.date.today)
     duration = models.DurationField(default=None)
 
+    @property
+    def is_state(self):
+        if not self.duration:
+            return True
+        else:
+            return False
+
     def get_absolute_url(self):
         return "/"
 
