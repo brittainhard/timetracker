@@ -13,17 +13,17 @@ class Activity(models.Model):
         return self.name
 
 
+class TimeBlockManager(models.Manager):
+
+    def states(self):
+        return self.filter(duration=datetime.timedelta())
+
+
 class TimeBlock(models.Model):
+    objects = TimeBlockManager()
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     recorded_time = models.DateField(default=datetime.date.today)
     duration = models.DurationField(default=None)
-
-    @property
-    def is_state(self):
-        if not self.duration:
-            return True
-        else:
-            return False
 
     def get_absolute_url(self):
         return "/"
@@ -31,3 +31,5 @@ class TimeBlock(models.Model):
     def __str__(self, *args, **kwargs):
         return "%s, %s, %s" % (self.recorded_time, self.activity.name,
                 self.duration)
+
+
