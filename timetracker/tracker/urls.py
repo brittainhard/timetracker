@@ -5,5 +5,5 @@ from . import views
 urlpatterns = [
 	path("", views.TimeBlockCreateView.as_view(), name="add_time_block"),
 	path("activity/", views.ActivityCreateView.as_view(), name="add_activity"),
-	path("chart/", views.BokehPieChartView.as_view(), name="pie_chart")
+	path("plots/", views.PlotView.as_view(), name="plots")
 ]

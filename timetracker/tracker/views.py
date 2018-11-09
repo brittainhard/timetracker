@@ -16,7 +16,7 @@ class ActivityCreateView(CreateView):
     fields = ["name"]
 
 
-class BokehPieChartView(TemplateView):
+class PlotView(TemplateView):
     template_name = "tracker/plots.html"
 
     def get_context_data(self, *args, **kwargs):
