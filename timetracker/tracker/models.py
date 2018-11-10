@@ -23,6 +23,7 @@ class TimeBlock(models.Model):
     objects = TimeBlockManager()
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     recorded_time = models.DateField(default=datetime.date.today)
+    timestamp = models.DateTimeField(default=timezone.now)
     duration = models.DurationField(default=None)
 
     def get_absolute_url(self):
